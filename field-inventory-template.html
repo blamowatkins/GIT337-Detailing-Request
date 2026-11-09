@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>Field Inventory</title>
+        <style>
+        body{
+            font-family:Arial,sans-serif;
+            line-height:1.5;
+            max-width:80rem;
+            margin:auto;
+            padding:1rem;
+            color:#191919;
+        }
+        table{
+            width:100%;
+            border-collapse:collapse;
+        }
+        th,td{
+            padding:.6rem;
+            border:1px solid #999;
+            text-align:left;
+            vertical-align:top;
+        }
+        th{
+            background:#f1f1f1;
+        }
+        </style>
+        </head>
+        <body>
+            <h1>F2 · Task and Data Plan</h1>
+            <p>Duplicate rows as needed. Justify every collected value.</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Visible label / question</th>
+                        <th>Why necessary now?</th>
+                        <th>Required?</th>
+                        <th>Native control/type</th>
+                        <th>Submitted name/value</th>
+                        <th>Autocomplete/inputmode</th>
+                        <th>Constraint/instruction</th>
+                        <th>Sensitivity and minimization decision</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                     <td>Email address</td>
+                     <td>To respond to the service request</td>
+                     <td>Yes</td>
+                     <td>input type="email"</td>
+                     <td>name="contact_email"</td>
+                     <td>autocomplete="email"</td>
+                     <td>Required; valid email format</td>
+                     <td>Contact information; no phone number required</td>
+                    </tr>
+
+                    <tr>
+                     <td>Service area</td>
+                     <td>To check whether mobile detailing is available in the customer's area</td>
+                     <td>Yes</td>
+                     <td>select dropdown</td>
+                     <td>name="service_area"</td>
+                     <td>Not applicable</td>
+                     <td>Choose one service area</td>
+                     <td>General location only; no exact home address</td>
+                    </tr>
+
+                    <tr>
+                     <td>Vehicle type</td>
+                     <td>To determine the appropriate detailing service and vehicle-size category</td>
+                     <td>Yes</td>
+                     <td>select dropdown</td>
+                     <td>name="vehicle_type"</td>
+                     <td>Not applicable</td>
+                     <td>Choose one: Car, SUV, Van, or Truck</td>
+                     <td>Vehicle category only; no license plate or VIN</td>
+                    </tr>
+
+                    <tr>
+                     <td>Detailing service</td>
+                     <td>To identify which detailing package the customer wants</td>
+                     <td>Yes</td>
+                     <td>Radio button group</td>
+                     <td>name="service_package"; values: interior, exterior, full</td>
+                     <td>Not applicable</td>
+                     <td>Choose one: Interior Detail, Exterior Detail, or Full Detail</td>
+                     <td>Service preference only; no sensitive information</td>
+                    </tr>
+
+                    <tr>
+                     <td>Preferred appointment date</td>
+                     <td>To identify when the customer wants the detailing service</td>
+                     <td>Yes</td>
+                     <td>input type="date"</td>
+                     <td>name="preferred_date"</td>
+                     <td>Not applicable</td>
+                     <td>Choose a preferred date; appointment subject to confirmation</td>
+                     <td>Scheduling information only; no sensitive data</td>
+                    </tr>
+
+                    <tr>
+                     <td>Preferred appointment time</td>
+                     <td>To help schedule a convenient detailing appointment</td>
+                     <td>No</td>
+                     <td>input type="time"</td>
+                     <td>name="preferred_time"</td>
+                     <td>Not applicable</td>
+                     <td>Optional; choose a time between 8:00 AM and 8:00 PM</td>
+                     <td>Scheduling preference only; no sensitive information</td>
+                    </tr>
+
+                    <tr>
+                     <td>Vehicle condition</td>
+                     <td>To estimate the cleaning effort needed</td>
+                     <td>No</td>
+                     <td>select dropdown</td>
+                     <td>name="vehicle_condition"</td>
+                     <td>Not applicable</td>
+                     <td>Optional; choose Light, Moderate, or Heavy cleaning</td>
+                     <td>General cleaning condition only; no personal information</td>
+                    </tr>
+
+                    <tr>
+                     <td>Clay bar treatment</td>
+                     <td>To request an optional exterior detailing add-on</td>
+                     <td>No</td>
+                     <td>input type="checkbox"</td>
+                     <td>name="add_clay_bar"; value="yes"</td>
+                     <td>Not applicable</td>
+                     <td>Optional; check the box to request clay bar treatment</td>
+                     <td>Service preference only; no sensitive information</td>
+                    </tr>
+
+                    <tr>
+                     <td>Pet hair removal</td>
+                     <td>To identify whether additional pet hair cleaning is needed</td>
+                     <td>No</td>
+                     <td>input type="checkbox"</td>
+                     <td>name="add_pet_hair"; value="yes"</td>
+                     <td>Not applicable</td>
+                     <td>Optional; check the box to request pet hair removal</td>
+                     <td>Cleaning preference only; no personal or pet information collected</td>
+                    </tr>
+
+                    <tr>
+                     <td>Parking location type</td>
+                     <td>To understand the vehicle's parking setup for mobile detailing</td>
+                     <td>No</td>
+                     <td>select dropdown</td>
+                     <td>name="parking_type"; values: driveway, parking_lot, other</td>
+                     <td>Not applicable</td>
+                     <td>Optional; choose Driveway, Parking Lot, or Other/Unsure</td>
+                     <td>General parking setup only; no street address</td>
+                    </tr>
+
+                    <tr>
+                     <td>Special cleaning instructions</td>
+                     <td>To describe additional cleaning needs not covered by the selected services</td>
+                     <td>No</td>
+                     <td>textarea</td>
+                     <td>name="special_instructions"</td>
+                     <td>Not applicable</td>
+                     <td>Optional; maximum 240 characters</td>
+                     <td>Cleaning details only; do not enter personal or sensitive information</td>
+                    </tr>
+                </tbody>
+            </table>
+        </body>
+        </html>

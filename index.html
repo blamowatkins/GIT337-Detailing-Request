@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>Inclusive Form Flow</title><link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <header class="page-header">
+            <p class="eyebrow">Mobile Detailing | Appointment Inquiry</p>
+            <h1>Mobile Auto Detailing Service Request</h1>
+            <p class="lede">Request mobile auto detailing services for your car, SUV, van, or truck. This form takes approximately 3 minutes to complete. Choose your service, vehicle type, and preferred appointment details. A real business would review your request and contact you to confirm availability. This classroom prototype does not send requests or collect real customer information.</p>
+        </header>
+        <main>
+            <section id="expectations">
+                <h2>F1 · Purpose and Expectations</h2>
+                <p>Fields labeled (required) must be completed. All other fields are optional. Use fictional information only. Do not enter real names, addresses, payment details, or sensitive information. This form is a classroom prototype and does not book an actual appointment or send requests to a business.</p>
+            </section>
+            <form method="get">
+                <fieldset>
+                    <legend>F3 · Contact information</legend>
+                    <p class="help">Enter a fictional email address for this service request. This is the only contact information needed. No real customer information is collected or sent.</p>
+                    
+                    <div class="field">
+                        <label for="email">Email address (required)</label>
+                        <input id="email" name="contact_email" type="email" autocomplete="email" required>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>F3 · Request choices</legend>
+                    <p class="help">
+                       Choose your service area, detailing package,
+                       and vehicle type. Fields marked (required)
+                       must be completed before submitting.
+                       Optional services and preferences may be skipped.
+                    </p>
+                    
+                    <div class="field">
+                     <label for="service-area">Service area (required)</label>
+                     <select id="service-area" name="service_area" required>
+                      <option value="" selected disabled>Choose your service area</option>
+                      <option value="baltimore_city">Baltimore City</option>
+                      <option value="baltimore_county">Baltimore County</option>
+                      <option value="montgomery">Montgomery County</option>
+                      <option value="prince_georges">Prince George's County</option>
+                     </select>
+                    </div>
+                    <fieldset class="service-options">
+                      <legend>Detailing service (required)</legend>
+
+                      <label class="choice">
+                         <input type="radio" name="service_package" value="interior" required>
+                         Interior Detail
+                      </label>
+
+                      <label class="choice">
+                         <input type="radio" name="service_package" value="exterior">
+                         Exterior Detail
+                      </label>
+
+                      <label class="choice">
+                         <input type="radio" name="service_package" value="full">
+                         Full Detail
+                       </label>
+                    </fieldset>
+                    </fieldset>
+
+                    <div class="field">
+                      <label for="vehicle-type">Vehicle type (required)</label>
+                      <select id="vehicle-type" name="vehicle_type" required>
+                        <option value="" selected disabled>Choose vehicle type</option>
+                        <option value="car">Car</option>
+                        <option value="suv">SUV</option>
+                        <option value="van">Van</option>
+                        <option value="truck">Truck</option>
+                      </select>
+                    </div>
+                    
+                    <div class="field">
+                      <label for="preferred-date">
+                        Preferred appointment date (required)
+                      </label>
+                      <input
+                        id="preferred-date"
+                        name="preferred_date"
+                        type="date"
+                        required
+                      >
+                      <p class="help">
+                        Choose your preferred date. Appointment
+                        availability is subject to confirmation.
+                      </p>
+                    </div>
+                       
+                    <div class="field">
+                      <label for="preferred-time">
+                        Preferred appointment time (optional)
+                      </label>
+
+                      <input
+                        id="preferred-time"
+                        name="preferred_time"
+                        type="time"
+                        min="08:00"
+                        max="20:00"
+                      >
+
+                      <p class="help">
+                        Choose a preferred time between 8:00 AM
+                        and 8:00 PM. Final availability
+                        will be confirmed later.
+                      </p>
+                    </div>
+
+                    <div class="field">
+                      <label for="vehicle-condition">
+                        Vehicle condition (optional)
+                      </label>
+
+                      <select id="vehicle-condition" name="vehicle_condition">
+                        <option value="">Choose vehicle condition</option>
+                        <option value="light">Light cleaning</option>
+                        <option value="moderate">Moderate cleaning</option>
+                        <option value="heavy">Heavy cleaning</option>
+                      </select>
+
+                      <p class="help">
+                        Select the condition that best describes
+                        your vehicle's cleaning needs.
+                      </p>
+                    </div>
+
+                    <fieldset class="service-options">
+                      <legend>Optional detailing add-ons</legend>
+
+                      <p class="help">
+                        Select any additional services you would like.
+                        You may select both or leave both unchecked.
+                      </p>
+
+                      <label class="choice">
+                       <input
+                        type="checkbox"
+                        name="add_clay_bar"
+                        value="yes"
+                      >
+                      Clay Bar Treatment
+                     </label>
+
+                     <label class="choice">
+                      <input
+                        type="checkbox"
+                        name="add_pet_hair"
+                        value="yes"
+                     >
+                     Pet Hair Removal
+                     </label>
+                    </fieldset>
+
+                    <div class="field">
+                      <label for="parking-type">
+                        Parking location type (optional)
+                      </label>
+
+                      <select id="parking-type" name="parking_type">
+                        <option value="">Choose parking location</option>
+                        <option value="driveway">Driveway</option>
+                        <option value="parking_lot">Parking Lot</option>
+                        <option value="other">Other / Unsure</option>
+                      </select>
+
+                      <p class="help">
+                        Select where the vehicle will be parked.
+                        Do not provide a street address.
+                      </p>
+                    </div>
+
+                    <div class="field">
+                      <label for="special-instructions">
+                        Special cleaning instructions (optional)
+                      </label>
+
+                      <p class="help" id="instructions-help">
+                        Describe any additional cleaning needs.
+                        Maximum 240 characters.
+                        Do not include personal or sensitive information.
+                      </p>
+
+                      <textarea
+                        id="special-instructions"
+                        name="special_instructions"
+                        aria-describedby="instructions-help"
+                        maxlength="240"
+                        rows="4"
+                      ></textarea>
+                    </div>
+                    <button type="submit">Test fictional detailing request</button>
+                </form>
+                <section id="states">
+                    <h2>F5 · State and Recovery Specimen</h2>
+                    <p>
+                      This section demonstrates the form's default,
+                      focus, required, valid, invalid, disabled,
+                      and server-returned error states. Required
+                      fields must be completed before submission.
+                      Errors identify the affected field and explain
+                      how to correct the problem. Optional fields
+                      remain neutral when left empty.
+                    </p>
+                     
+                    <h3>Form State Guide</h3>
+
+                    <ul>
+                      <li>
+                        <strong>Default:</strong>
+                        Fields display neutral borders before interaction.
+                      </li>
+                      <li>
+                        <strong>Focus:</strong>
+                        Keyboard focus uses a visible gold outline.
+                      </li>
+                      <li>
+                        <strong>Required:</strong>
+                        Required fields must be completed before submission.
+                      </li>
+                      <li>
+                        <strong>Valid:</strong>
+                        Valid entries can display a green border.
+                       </li>
+                       <li>
+                        <strong>Invalid:</strong>
+                        Invalid entries can display a red border and
+                        must provide helpful correction instructions.
+                       </li>
+                       <li>
+                        <strong>Disabled:</strong>
+                        Disabled controls cannot be activated.
+                       </li>
+                       <li>
+                        <strong>Server-returned error:</strong>
+                        The fictional example below identifies an email
+                        problem and explains how to correct it.
+                       </li>
+                       </ul>
+
+                    <h3>Static Server-Returned Error Example</h3>
+                    <p>
+                       This is a fictional example showing how a
+                       server error would be presented to a customer.
+                       No information is sent to a real server.
+                    </p>
+                    <div class="error-summary">
+                        <h3>There is a problem with the fictional submission</h3>
+                        <p><a href="#error-example">Email address needs attention</a></p>
+                    </div>
+                    <div class="field field-error">
+                        <label for="error-example">Email address</label>
+                        <input id="error-example" type="email" value="alex.example" aria-invalid="true" aria-describedby="error-message">
+                        <p id="error-message"><strong>Error:</strong> Enter a valid emailaddress, such as name@example.com. Include the @ symbol and a domain</p>
+                    </div>
+                    <button type="button" disabled>Disabled example</button>
+                </section>
+                <section id="documentation">
+                    <h2>F2 and F6 · Planning and Evidence</h2>
+                    <p>Link your field inventory, state matrix, fictional test-data list, completed test record, and AI disclosure.</p>
+                </section>
+            </main>
+        </body>
+        </html>
